@@ -1,0 +1,59 @@
+.cardHallContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .titleInside {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .sectionAdvantages {
+        .items {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+
+            @media screen and (min-width: 768px) {
+                gap: 80px;
+            }
+
+            .item {
+                display: flex;
+                gap: 8px;
+                flex-direction: column;
+                align-items: center;
+
+                .itemIcon {
+                    height: 40px;
+                    width: 40px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .itemLabel {
+                    width: 150px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .sectionSelect {
+        input {
+            &::placeholder {
+                color: red !important;
+            }
+        }
+    }
+
+    .sectionCards {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}

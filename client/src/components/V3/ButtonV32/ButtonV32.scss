@@ -1,0 +1,92 @@
+.ButtonV32 {
+  border-radius: 64px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+
+  &.default {
+    height: 48px;
+  }
+
+  &.lg {
+    height: 48px;
+
+    @media screen and (min-width: 600px) {
+      height: 56px;
+    }
+  }
+
+  &.fit {
+    width: fit-content;
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+  &.disabled {
+    cursor: default;
+  }
+
+  .bgGradient {
+    background-image: linear-gradient(var(--color-2-v3), var(--color-3-v3));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+      // border: 2px solid var(--color-2-v3);
+
+      background: var(--color-1-v3);
+
+      font-weight: 700;
+
+      &:hover {
+        background: unset;
+        background-image: linear-gradient(var(--color-2-v3), var(--color-3-v3));
+      }
+
+      //   height: 100%;
+      //   width: 100%;
+      height: calc(100% - 4px);
+      width: calc(100% - 5px);
+      border-radius: 72px;
+      // display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-0.5px);
+      padding: 12px;
+
+      @media screen and (min-width: 768px) {
+        // padding: 32px;
+      }
+
+      .containerText {
+        width: max-content;
+        transform: translate(-2px, -2px);
+        background: -webkit-linear-gradient(
+          top,
+          var(--color-2-v3),
+          var(--color-3-v3)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        padding: 0 12px;
+
+        @media screen and (min-width: 768px) {
+          padding: 0 32px;
+        }
+      }
+    }
+
+    :hover {
+      .containerText {
+        background: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+      }
+    }
+  }
+}

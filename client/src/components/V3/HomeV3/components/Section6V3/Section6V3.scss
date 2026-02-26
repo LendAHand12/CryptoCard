@@ -1,0 +1,20 @@
+.Section6V3 {
+    color: var(--color-4-v3);
+    padding: 80px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    border-bottom: 1px solid var(--color-5-v3);
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        flex-direction: column;
+    }
+}

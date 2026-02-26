@@ -1,0 +1,58 @@
+.ModalV3 {
+  width: 100vw;
+  height: 100svh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  .overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    position: absolute;
+  }
+
+  .modalContainer {
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    background-color: rgba(6, 6, 6);
+    color: var(--color-4-v3);
+    z-index: 1002;
+
+    .closeIcon {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    // chủ yếu bọc thêm 1 lớp nữa để ẩn phần dư của thanh scrollbar;
+    .modalContent {
+      max-height: 90svh;
+      overflow-y: auto;
+      padding: 20px;
+      border-radius: 30px;
+      width: 90vw;
+      padding-top: 40px;
+
+      border: 2px solid var(--color-14-v3);
+
+      @media screen and (min-width: 768px) {
+        max-width: 630px;
+        padding: 40px;
+      }
+    }
+  }
+}

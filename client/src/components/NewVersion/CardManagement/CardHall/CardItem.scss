@@ -1,0 +1,115 @@
+.cardItemContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 16px;
+    border-radius: 10px;
+
+    @media screen and (min-width: 1024px) {
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+
+        @media screen and (min-width: 1280px) {
+            flex-direction: row;
+            justify-content: unset;
+            align-items: center;
+        }
+
+        .cardImg {
+            width: 100%;
+            max-width: 300px;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .cardContent {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .cardTitle {
+                font-weight: 800;
+                font-size: 20px;
+            }
+
+            .cardDesc {
+                padding: 8px 10px;
+                border-radius: 10px;
+                border: 1px solid #f4e096;
+                color: #f4e096;
+                font-weight: 500;
+            }
+
+            .cardOptions {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+
+                @media screen and (min-width: 1024px) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+
+                .option {
+                    background-color: #f0f0f0;
+                    padding: 10px;
+                    border-radius: 10px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    transition: background-color 0.5s ease;
+
+                    &.selected {
+                        background-color: #f4e096;
+                    }
+
+                    .titleOption {
+                        font-weight: 600;
+                        text-align: center;
+                    }
+
+                    .descOption {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+
+        .note {
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .buttonInside {
+            width: 100%;
+            background-color: #f4e096;
+            color: #fff;
+            text-align: center;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+
+            @media screen and (min-width: 768px) {
+                width: 250px;
+            }
+        }
+    }
+}

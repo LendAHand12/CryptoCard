@@ -1,0 +1,244 @@
+.CardDetailV3 {
+    color: var(--color-4-v3);
+    padding-top: 40px;
+    margin-bottom: 80px;
+    overflow: hidden;
+    position: relative;
+
+    .sectionIntro {
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid var(--color-14-v3);
+        margin-bottom: 24px;
+        flex-direction: column;
+        padding: 16px;
+        gap: 24px;
+
+        @media screen and (min-width: 768px) {
+            padding: 20px 40px;
+            gap: 32px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            flex-direction: row;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--color-2-v3);
+            flex-shrink: 0;
+
+            @media screen and (min-width: 768px) {
+                font-size: 46px;
+            }
+        }
+
+        .cardImgs {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+                gap: 40px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: fit-content;
+            }
+
+            .frontImg,
+            .backImg {
+                // width: 290px;
+                width: 100%;
+
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .titleInside {
+        font-size: 24px;
+        padding: 10px;
+        font-weight: 600;
+        border-bottom: 1px solid var(--color-14-v3);
+    }
+
+    .sectionOperation,
+    .sectionTransaction {
+        margin-bottom: 30px;
+
+        .titleInside {
+            margin-bottom: 30px;
+        }
+    }
+
+    .wrappedOutside {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 80px;
+
+        @media screen and (min-width: 1024px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+    }
+
+    .sectionActions {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .balance {
+            background-image: linear-gradient(to right, #1f2617 0%, #1f2617 50%, #3a371d 75%, #3a371d 80%, #2b2e1a 90%);
+            border-radius: 16px;
+            border: 1px solid var(--color-14-v3);
+            overflow: hidden;
+            height: 190px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding-left: 40px;
+
+            .title {
+                z-index: 2;
+                font-size: 16px;
+                position: relative;
+            }
+
+            .amount {
+                z-index: 2;
+                font-size: 18px;
+                position: relative;
+                font-weight: 600;
+                color: var(--color-2-v3);
+                margin-top: 12px;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 24px;
+                }
+            }
+
+            .bgImg {
+                z-index: 1;
+                // display: none;
+                position: absolute;
+                top: 50%;
+                right: 22px;
+                transform: translateY(-50%) scale(0.7) translateX(50%);
+
+                @media screen and (min-width: 425px) {
+                    display: block;
+                    transform: translateY(-50%) scale(1);
+                }
+
+                img {
+                    filter: brightness(90%);
+                }
+            }
+        }
+
+        .pin {
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 14px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            @media screen and (min-width: 768px) {
+                gap: 40px;
+            }
+
+            .title {
+                font-weight: 600;
+            }
+
+            .value {
+                border-radius: 60px;
+                background-color: #474747;
+                font-weight: 600;
+                padding: 10px 20px;
+                padding-right: 40px;
+                position: relative;
+
+                .toggleEye {
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+
+            @media screen and (min-width: 768px) {
+                gap: 40px;
+            }
+        }
+    }
+
+    .sectionInformation {
+        .titleInside {
+            margin-bottom: 20px;
+        }
+
+        .boxContainer {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--color-14-v3);
+
+            .title {
+                background-color: var(--color-16-v3);
+                padding: 14px 15px;
+            }
+
+            .rowItem {
+                padding: 16px 20px;
+                display: flex;
+                justify-content: space-between;
+                gap: 16px;
+                align-items: center;
+
+                &:not(:last-of-type) {
+                    border-bottom: 1px solid var(--color-5-v3);
+                }
+
+                .label {
+                    opacity: 0.6;
+                    font-size: 14px;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 16px;
+                    }
+                }
+
+                .value {
+                    text-align: end;
+                    font-size: 14px;
+                    font-weight: 600;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

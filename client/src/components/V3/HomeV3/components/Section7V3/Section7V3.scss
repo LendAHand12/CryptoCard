@@ -1,0 +1,29 @@
+.Section7V3 {
+    color: var(--color-4-v3);
+    padding-top: 72px;
+
+    .title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 60px;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+            font-size: 40px;
+        }
+    }
+
+    .imgs {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+
+        @media screen and (min-width: 600px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "BTCUSDT": "Bitcoin",
+    "ETHUSDT": "Etherium",
+    "WAVESUSDT": "Waves",
+    "XRPUSDT": "XRP",
+    "BCHUSDT": "Bitcoin Cash",
+    "BNBUSDT": "BNB",
+    "LTCUSDT": "Litecoin",
+    "DOTUSDT": "Polkadot",
+    "XTZUSDT": "Tezos",
+    "XLMUSDT": "Stellar",
+    "TRXUSDT": "Tron"
+}

@@ -1,0 +1,95 @@
+.footerV2Container {
+    background-color: $bg-color-3-v2;
+    color: $text-color-1-v2;
+
+    .containerInside {
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        border-bottom: 1px solid #fff;
+        margin-bottom: 16px;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .top {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                .logo {
+                    width: 150px;
+                    object-fit: contain;
+                }
+
+                .brandName {
+                    font-size: 30px;
+                    text-transform: uppercase;
+                }
+            }
+
+            .center {
+                font-weight: 500;
+                font-size: $heading-4-v2;
+                max-width: 500px;
+
+                @media screen and (min-width: 768px) {
+                    font-size: $heading-3-v2;
+                }
+            }
+
+            .bottom {
+                font-weight: 400;
+                font-size: $text-3-v2;
+            }
+        }
+
+        .center,
+        .right {
+            flex: 1;
+
+            .top {
+                font-size: $heading-5-v2;
+                margin-bottom: 24px;
+            }
+
+            .bottom {
+                font-size: $text-3-v2;
+            }
+        }
+    }
+
+    .containerInside2 {
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        // margin-bottom: 16px;
+        padding-bottom: 16px;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .left {
+            display: flex;
+            gap: 24px;
+
+            .rightInside {
+                display: flex;
+                gap: 20px;
+            }
+        }
+
+        .right {
+            display: flex;
+            gap: 16px;
+        }
+    }
+}

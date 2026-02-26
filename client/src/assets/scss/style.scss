@@ -1,0 +1,186 @@
+@import "./base/base.scss";
+@import "./components/NewVersion/BaseV2.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap");
+
+:root {
+  --color-1-v3: #101010;
+  --color-2-v3: #fbcb5c;
+  --color-3-v3: #f59234;
+  --color-4-v3: #fff;
+  --color-5-v3: #333333;
+  --color-6-v3: #1a1a1a;
+  --color-7-v3: #000;
+  --color-8-v3: #797979;
+  --color-9-v3: #463d2e;
+  --color-10-v3: #adb2b1;
+  --color-11-v3: #262626;
+  --color-12-v3: #171717;
+  --color-13-v3: #161616;
+  --color-14-v3: #4f4f4f; // border color
+  --color-15-v3: #939393;
+  --color-16-v3: #695c40;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "M PLUS 1", "Space Grotesk", "Montserrat", "Roboto", "Open Sans", sans-serif !important;
+  background-color: var(--color-6-v3) !important;
+  position: relative;
+}
+
+#root {
+  position: relative;
+}
+
+@import "./base/configCssSerepay.scss";
+@import "./base/gridSerepay.scss";
+@import "./base/flex.scss";
+@import "./base/paddingSerepay.scss";
+@import "./base/marginSerepay.scss";
+@import "./base/textAlignSerepay.scss";
+@import "./base/display.scss";
+@import "./base/hover.scss";
+@import "./base/position.scss";
+@import "./base/border.scss";
+@import "./base/width.scss";
+@import "./base/selectSerepay.scss";
+
+@import "./components/MainTemplate.scss";
+@import "./components/AdminWidthdraw.scss";
+@import "./components/Header1.scss";
+@import "./components/Header2.scss";
+@import "./components/P2PTrading.scss";
+@import "./components/P2PTrading2.scss";
+@import "./components/Footer.scss";
+@import "./components/Verify.scss";
+@import "./components/Swap.scss";
+@import "./components/recoveryEmail.scss";
+@import "./components/CreateBuy.scss";
+@import "./components/Login.scss";
+@import "./components/Wallet.scss";
+@import "./components/Home.scss";
+@import "./components/SwaptobeWallet.scss";
+@import "./components/SwaptobeWalletDeposit.scss";
+@import "./components/Profile.scss";
+@import "./components/AdminTemplate.scss";
+@import "./components/AdminHeader.scss";
+@import "./components/AdminSidebar.scss";
+@import "./components/AdminDashboard.scss";
+@import "./components/PhoneApps.scss";
+@import "./components/AdminExchangeRateDisparity.scss";
+@import "./components/AdminAds.scss";
+@import "./components/Transaction.scss";
+@import "./components/Confirm.scss";
+@import "./components/AdsHistory.scss";
+@import "./components/AdminExchange.scss";
+@import "./components/P2pManagement.scss";
+@import "./components/AdminConfigData.scss";
+@import "./components/P2pExchange.scss";
+@import "./components/AdminUser.scss";
+@import "./base/common.scss";
+
+// NEW VERSION
+@import "./components/NewVersion/HomeV2.scss";
+@import "./components/NewVersion/HeaderV2.scss";
+@import "./components/NewVersion/FooterV2.scss";
+@import "./components/NewVersion/CommonV2.scss";
+@import "./components/NewVersion/ProductV2.scss";
+@import "./newColors.scss";
+
+// V3
+
+.containerV3 {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-xs {
+  font-size: 14px;
+}
+
+.text-gradient-t-b {
+  background: -webkit-linear-gradient(top, var(--color-2-v3), var(--color-3-v3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.preventBodyScroll {
+  height: 100svh !important;
+  overflow: hidden !important;
+}
+
+.DrawerV3 {
+  .ant-drawer-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 30px 0 0 30px;
+
+    .ant-drawer-header {
+      border-bottom: 0;
+
+      .ant-drawer-header-title {
+        flex-direction: row-reverse;
+
+        .ant-drawer-close {
+          color: #fff;
+          margin-right: 0;
+        }
+
+        .ant-drawer-title {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.customAntd {
+  color: #000 !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  border-radius: 12.5px !important;
+  padding-bottom: 3px !important;
+}
+
+.layerBlur2S8 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.selectCustom.ant-select {
+  background-color: #101010;
+  color: #fff;
+
+  .ant-select-selector {
+    background-color: #101010 !important;
+  }
+
+  .ant-select-arrow {
+    color: #fff;
+  }
+}
+
+// custom select option here
+.ant-select-item.ant-select-item-option {
+  &.ant-select-item-option-active {
+  }
+
+  &.ant-select-item-option-selected {
+  }
+}

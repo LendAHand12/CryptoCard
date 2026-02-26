@@ -1,0 +1,86 @@
+.HeaderV3 {
+    background-color: var(--color-1-v3);
+    color: var(--color-4-v3);
+    height: 100px;
+    border-bottom: 1px solid var(--color-5-v3);
+
+    .headerV3Container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        .left {
+            img {
+                height: 40px;
+            }
+        }
+
+        .center {
+            display: none;
+
+            @media screen and (min-width: 1024px) {
+                display: block;
+            }
+
+            .menus {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                @media screen and (min-width: 1024px) {
+                    gap: 32px;
+                }
+
+                .menu {
+                    font-size: 14px;
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    @media screen and (min-width: 1024px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: none;
+
+            @media screen and (min-width: 1024px) {
+                display: block;
+            }
+
+            .buttons {
+                display: flex;
+                gap: 24px;
+                align-items: center;
+
+                @media screen and (min-width: 1024px) {
+                    gap: 30px;
+                }
+            }
+        }
+
+        .mobile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            @media screen and (min-width: 1024px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.menusOutside {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .menu {
+        text-align: center;
+        cursor: pointer;
+    }
+}

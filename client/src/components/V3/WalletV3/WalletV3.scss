@@ -1,0 +1,292 @@
+.WalletV3 {
+    color: var(--color-4-v3);
+    padding-top: 70px;
+    padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+
+    .sectionConnectWallet {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+        padding: 20px 0;
+        flex-direction: column;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+
+        .icon {
+        }
+
+        .content {
+            flex: 1;
+            padding-right: 0px;
+            text-align: center;
+
+            @media screen and (min-width: 768px) {
+                padding-right: 70px;
+                text-align: start;
+            }
+
+            .title {
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .desc {
+                font-size: 16px;
+                opacity: 0.7;
+            }
+        }
+
+        .btnConnect {
+            flex-shrink: 0;
+        }
+    }
+
+    .sectionTotalBalance {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .totalBalance {
+            border-radius: 16px;
+            height: 180px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            gap: 10px;
+            padding-left: 40px;
+            overflow: hidden;
+
+            &.usdt {
+                background-image: linear-gradient(
+                    to right,
+                    #2c1c1c 0%,
+                    #2c1c1c 50%,
+                    #3a261f 75%,
+                    #3a261f 80%,
+                    #37231e 90%
+                );
+            }
+
+            &.eur {
+                background-image: linear-gradient(
+                    to right,
+                    #1f2617 0%,
+                    #1f2617 50%,
+                    #3a371d 75%,
+                    #3a371d 80%,
+                    #2b2e1a 90%
+                );
+            }
+
+            .title {
+                z-index: 2;
+                font-size: 16px;
+                position: relative;
+            }
+
+            .amount {
+                z-index: 2;
+                font-size: 24px;
+                position: relative;
+                font-weight: 600;
+                color: var(--color-2-v3);
+
+                @media screen and (min-width: 768px) {
+                    font-size: 46px;
+                }
+            }
+
+            .bgImg {
+                z-index: 1;
+                // display: none;
+                position: absolute;
+                top: 50%;
+                right: 22px;
+                transform: translateY(-50%) scale(0.7) translateX(50%);
+
+                @media screen and (min-width: 425px) {
+                    display: block;
+                    transform: translateY(-50%) scale(1);
+                }
+            }
+        }
+    }
+
+    .sectionDeposit {
+        padding: 30px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 40px;
+
+        .depositInfo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+
+            .infoItem {
+                .label {
+                    font-weight: 600;
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                }
+
+                .value {
+                    border-radius: 8px;
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    color: 1px solid rgba(255, 255, 255, 0.5);
+                    padding: 13.5px 20px;
+                }
+            }
+        }
+
+        .depositContent {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            @media screen and (min-width: 1024px) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .left {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .qr {
+                    margin-bottom: 14px;
+                    border-radius: 16px;
+                    overflow: hidden;
+                }
+
+                .title {
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                }
+
+                .linkQr {
+                    font-size: 12px;
+                    margin-bottom: 6px;
+                    white-space: wrap;
+                    word-break: break-all;
+                    text-align: center;
+                }
+
+                .copy {
+                    font-weight: 600;
+                    font-size: 12px;
+                    cursor: pointer;
+                }
+            }
+
+            .right {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                .note {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    margin-bottom: 26px;
+
+                    .desc {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    .sectionCoins {
+        border-radius: 12px;
+        overflow-x: auto;
+
+        // .tableContainer {
+        //     min-width: fit-content;
+        //     width: 100%;
+
+        //     .rowHead {
+        //         width: 100%;
+        //         background-color: var(--color-16-v3);
+        //         display: grid;
+        //         grid-template-columns: repeat(5, 1fr);
+        //         gap: 16px;
+        //         color: var(--color-4-v3);
+        //         margin-bottom: 16px;
+        //         padding: 14px 30px;
+        //         border-radius: 12px;
+
+        //         .cHead {
+        //             font-size: 18px;
+        //             font-weight: 600;
+        //         }
+        //     }
+
+        //     .rowBody {
+        //         width: 100%;
+        //         background-color: rgba(0, 0, 0, 0.1);
+        //         border: 1px solid var(--color-14-v3);
+        //         border-radius: 12px;
+        //         overflow: hidden;
+        //         display: grid;
+        //         grid-template-columns: repeat(5, 1fr);
+        //         gap: 16px;
+        //         padding: 14px 30px;
+        //         margin-bottom: 16px;
+        //         align-items: center;
+
+        //         .cBody {
+        //             font-size: 14px;
+        //             font-weight: 600;
+        //         }
+        //     }
+        // }
+    }
+
+    .wrappedSection {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        &:not(.isOpenDeposit) {
+            .sectionDeposit {
+                display: none;
+            }
+        }
+
+        &.isOpenDeposit {
+            @media screen and (min-width: 1024px) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .sectionTotalBalance {
+                gap: 20px;
+                grid-template-columns: 1fr;
+                height: fit-content;
+                margin-bottom: 0px;
+
+                .totalBalance {
+                    height: 190px;
+                }
+            }
+        }
+    }
+}

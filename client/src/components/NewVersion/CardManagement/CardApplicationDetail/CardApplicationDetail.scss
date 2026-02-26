@@ -1,0 +1,50 @@
+.cardApplicationDetailContainer {
+    .titleInside {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        .topLeft {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #00000090;
+            cursor: pointer;
+        }
+
+        .topRight {
+            margin-left: 16px;
+            padding-left: 16px;
+            border-left: 1px solid #ccc;
+            font-weight: 600;
+            font-size: 18px;
+        }
+    }
+
+    .sectionIntro {
+        margin-bottom: 30px;
+
+        .textInside {
+            margin-top: 16px;
+        }
+    }
+
+    .sectionApplication {
+        margin-bottom: 30px;
+
+        .contentInside {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
+
+    .sectionUse {
+    }
+}

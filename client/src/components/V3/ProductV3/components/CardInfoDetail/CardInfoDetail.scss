@@ -1,0 +1,42 @@
+.CardInfoDetail {
+    .cardImg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        width: 100%;
+
+        img {
+            width: 70%;
+            border: 1px solid #252525;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+    }
+
+    .cardContent {
+        border-top: 1px solid rgba(136, 136, 136, 0.2);
+
+        .cardRow {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(136, 136, 136, 0.2);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            .cardLabel {
+                opacity: 0.6;
+                font-size: 14px;
+                max-width: 40%;
+                white-space: wrap;
+            }
+
+            .cardValue {
+                font-size: 14px;
+                font-weight: 600;
+                text-align: right;
+                white-space: wrap;
+                max-width: 40%;
+            }
+        }
+    }
+}

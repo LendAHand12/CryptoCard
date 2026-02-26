@@ -1,0 +1,73 @@
+.Section9V3Container {
+  gap: 16px;
+  display: grid;
+  margin-bottom: 60px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 120px;
+  }
+
+  :last-child {
+    grid-column: 1 / span 2;
+  }
+
+  @media screen and (min-width: 1024px) {
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+
+    :last-child {
+      grid-column: unset;
+    }
+  }
+
+  .Section9V3 {
+    border-radius: 20px;
+    color: var(--color-4-v3);
+    border: 1px solid var(--color-3-v3);
+    box-shadow: 0 0.24px 30.96px 0 rgba(245, 146, 52, 0.13);
+
+    .rowInside {
+      gap: 16px;
+      height: 100%;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      @media screen and (min-width: 1024px) {
+        padding: 48px;
+      }
+
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+          font-size: 24px;
+        }
+
+        @media screen and (min-width: 1024px) {
+          font-size: 30px;
+        }
+      }
+
+      .content {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+          font-size: 20px;
+        }
+
+        @media screen and (min-width: 1024px) {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

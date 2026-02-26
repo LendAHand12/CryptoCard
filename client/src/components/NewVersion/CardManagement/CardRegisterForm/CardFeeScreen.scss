@@ -1,0 +1,85 @@
+.CardFeeScreen {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 16px;
+    color: #fff;
+
+    @media screen and (max-width: 768px) {
+        border-top: 1px solid #7a7a7a;
+    }
+
+    .titleInside {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 15px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .fee {
+        margin-bottom: 12px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 24px;
+        }
+
+        .highlight {
+            font-size: 32px;
+            font-weight: 400;
+        }
+    }
+
+    .desc1 {
+        margin-bottom: 12px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 24px;
+        }
+    }
+
+    .items {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+        border-bottom: 1px solid #7a7a7a;
+        width: 100%;
+        margin-bottom: 12px;
+
+        .item {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .label {
+                text-align: start;
+                font-size: 14px;
+            }
+
+            .value {
+                font-size: 14px;
+                text-align: end;
+            }
+        }
+    }
+
+    .available {
+        align-self: flex-end;
+        margin-bottom: 24px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 48px;
+        }
+
+        span {
+            font-weight: 500;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.ButtonV3Primary {
+    border-radius: 64px;
+    overflow: hidden;
+    cursor: pointer;
+    background-image: linear-gradient(var(--color-2-v3), var(--color-3-v3));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-7-v3);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0 16px;
+    transition: all 0.3s ease-out;
+
+    &.default {
+        height: 48px;
+    }
+
+    &.lg {
+        height: 48px;
+
+        @media screen and (min-width: 600px) {
+            height: 56px;
+        }
+    }
+
+    &.fit {
+        width: fit-content;
+    }
+
+    &.full {
+        width: 100%;
+    }
+
+    &.disabled {
+        cursor: default;
+        user-select: none;
+    }
+
+    &:hover {
+        background-image: linear-gradient(var(--color-3-v3), var(--color-2-v3));
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 16px;
+    }
+}

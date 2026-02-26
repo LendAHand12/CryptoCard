@@ -1,0 +1,284 @@
+.cardManageDetailContainer {
+    color: #fff;
+    padding: 50px 0;
+
+    .titleInside {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .btnInside {
+        background-color: #f4e096;
+        padding: 8px 24px;
+        border-radius: 4px;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        outline: none;
+        border: 0;
+        display: block;
+
+        &.disabled {
+            cursor: not-allowed;
+            background-color: #2b2b2b;
+            color: #fff;
+        }
+    }
+
+    .top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        .topLeft {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #f4e096;
+            cursor: pointer;
+        }
+
+        .topRight {
+            margin-left: 16px;
+            padding-left: 16px;
+            border-left: 1px solid #ccc;
+            font-weight: 600;
+            font-size: 18px;
+        }
+    }
+
+    .sectionIntro {
+        margin-bottom: 36px;
+
+        .textInside {
+            margin-top: 16px;
+        }
+    }
+
+    .sectionApplication {
+        margin-bottom: 36px;
+
+        .contentInside {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
+
+    .sectionUse {
+    }
+
+    .sectionActions {
+        margin-bottom: 36px;
+        .actions {
+            gap: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            @media screen and (min-width: 600px) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .btnInside {
+                background-color: #f4e096;
+                word-break: keep-all;
+                padding: 8px 24px;
+                border-radius: 4px;
+                color: #000;
+                font-weight: 600;
+                cursor: pointer;
+                text-align: center;
+                outline: none;
+                border: 0;
+                display: block;
+
+                &.disabled {
+                    cursor: not-allowed;
+                    background-color: #2b2b2b;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .sectionPreview {
+        .cardItems {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            position: relative;
+            margin-bottom: 32px;
+
+            @media screen and (min-width: 600px) {
+                // grid-template-columns: 1fr 1fr;
+            }
+
+            @media screen and (min-width: 768px) {
+                gap: 48px;
+            }
+
+            .wrappedCard {
+                background-color: #1a1a1a;
+                padding: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                border-radius: 10px;
+                box-shadow:
+                    inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
+                    /* shadow ring 👇 */ 0 0 0 1px hsla(0, 0%, 0%, 0.05),
+                    /* multiple soft shadows 👇 */ 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+                    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+                    0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+
+                @media screen and (min-width: 768px) {
+                    padding: 30px;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+            }
+
+            .overlayLoading {
+                position: absolute;
+                background-color: #00000050;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.uploadProofAddress {
+    padding: 16px;
+
+    .btnInside {
+        background-color: #f4e096;
+        padding: 8px 24px;
+        border-radius: 4px;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        outline: none;
+        border: 0;
+        margin: 0 auto;
+        margin-top: 16px;
+        display: block;
+
+        &.disabled {
+            cursor: not-allowed;
+            background-color: #2b2b2b;
+            color: #fff;
+        }
+    }
+
+    .item {
+        display: flex;
+        padding: 12px;
+        border: 1px solid #7a7a7a;
+        border-radius: 4px;
+        flex-direction: column;
+        gap: 8px;
+
+        @media screen and (min-width: 768px) {
+            // align-items: center;
+            // flex-direction: row;
+        }
+
+        .label {
+            // width: 120px;
+            color: #fff;
+
+            @media screen and (min-width: 768px) {
+                // width: 150px;
+            }
+
+            .star {
+                color: red;
+            }
+        }
+
+        input {
+            outline: none;
+            border: 0;
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .card {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 6fr 4fr;
+            gap: 16px;
+
+            span {
+                &:first-child {
+                    width: 100%;
+
+                    .ant-upload {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+
+                        @media screen and (min-width: 1024px) {
+                            justify-content: flex-start;
+                        }
+
+                        .containImg {
+                            width: 100%;
+
+                            // width: 100%;
+                            // display: grid;
+                            // grid-template-columns: 6fr 4fr;
+                            // gap: 16px;
+
+                            .placeholderImg {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .imgPreview {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .ant-upload-list-item {
+            &:hover {
+                .ant-upload-list-item-info {
+                    background-color: #ffffff20;
+                }
+            }
+        }
+
+        .ant-upload-list-text {
+            display: none;
+
+            .ant-upload-span {
+                color: #fff !important;
+
+                .ant-upload-text-icon {
+                    .anticon.anticon-paper-clip {
+                        color: #fff !important;
+                    }
+                }
+
+                .anticon-delete {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

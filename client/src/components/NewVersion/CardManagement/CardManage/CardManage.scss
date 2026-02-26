@@ -1,0 +1,92 @@
+.cardManageContainer {
+    padding: 50px 0;
+
+    .titleInside {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+}
+
+.linkedCardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .btnInside {
+        background-color: #f4e096;
+        width: 100%;
+        padding: 8px 24px;
+        border-radius: 4px;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+        margin: 0 auto;
+        text-align: center;
+        outline: none;
+        border: 0;
+        display: block;
+
+        &.disabled,
+        &:disabled {
+            cursor: not-allowed;
+            background-color: #2b2b2b;
+            color: #fff;
+        }
+    }
+
+    .inputInside {
+        background-color: #242424;
+        color: #fff;
+        border: 1px solid #ccc;
+        transition: all 0.3s ease-out;
+        outline: none;
+        font-size: 16px;
+        padding: 6px 12px;
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .item {
+        display: flex;
+        padding: 12px;
+        border: 1px solid #505050;
+        border-radius: 4px;
+        // flex-direction: column;
+        gap: 8px;
+        position: relative;
+        flex-direction: row;
+
+        @media screen and (min-width: 768px) {
+            align-items: center;
+        }
+
+        .label {
+            width: 100px;
+            color: #fff;
+
+            @media screen and (min-width: 768px) {
+                width: 150px;
+            }
+
+            .star {
+                color: red;
+            }
+        }
+
+        input {
+            outline: none;
+            border: 0;
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .eyePwd {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    }
+}

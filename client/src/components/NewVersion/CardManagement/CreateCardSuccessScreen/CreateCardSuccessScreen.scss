@@ -1,0 +1,20 @@
+.btnInsideSuccess {
+    border-radius: 8px;
+    background-color: #f4e096;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 0;
+    color: #000000;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    margin: 0 auto;
+    transform: translateY(-30px);
+
+    @media screen and (min-width: 768px) {
+        padding: 8px 55px;
+        width: fit-content;
+        font-size: 18px;
+    }
+}

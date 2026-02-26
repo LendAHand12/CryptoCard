@@ -1,0 +1,127 @@
+.Section5V3 {
+  color: var(--color-4-v3);
+  position: relative;
+
+  .bgGrid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(-400px);
+  }
+
+  .bgFinger {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  .content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 120px;
+    gap: 32px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding-top: 0;
+    }
+
+    .left {
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      img {
+        width: 80%;
+        position: relative;
+      }
+
+      .cGlass {
+        position: relative;
+
+        .glass {
+          top: 50px;
+          left: 100px;
+          width: unset;
+          position: absolute;
+          animation: swing 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+      }
+
+      .dot {
+        background-color: var(--color-2-v3);
+        filter: blur(100px);
+        opacity: 0.25;
+        // box-shadow: 0 0 10px 10px rgba(201, 203, 92, 0.5);
+        width: 272px;
+        height: 272px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+
+      @media screen and (min-width: 768px) {
+        justify-content: center;
+        padding-left: 88px;
+        align-items: flex-start;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 700;
+
+        @media screen and (min-width: 768px) {
+          font-size: 40px;
+        }
+      }
+
+      .menus {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .menu {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

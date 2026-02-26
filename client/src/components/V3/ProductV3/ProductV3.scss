@@ -1,0 +1,177 @@
+.ProductV3 {
+    color: var(--color-4-v3);
+    position: relative;
+    padding-top: 60px;
+    overflow-y: hidden;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 82px;
+    }
+
+    .cardGrid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: translateY(-70px);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .sectionIntro {
+        margin-bottom: 120px;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+        border-radius: 30px;
+        border: 2px solid var(--color-11-v3);
+        background-color: var(--color-12-v3);
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 166px;
+            padding: 55px 0;
+        }
+
+        .title {
+            color: var(--color-2-v3);
+            font-weight: 600;
+            text-align: center;
+            font-size: 24px;
+
+            @media screen and (min-width: 768px) {
+                width: 333px;
+                font-size: 46px;
+            }
+        }
+
+        .desc {
+            text-align: center;
+            width: 80%;
+
+            @media screen and (min-width: 768px) {
+                width: 336px;
+            }
+        }
+    }
+
+    .sectionCards {
+        display: grid;
+        position: relative;
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 40px;
+        row-gap: 166px;
+        row-gap: 100px;
+
+        @media screen and (min-width: 768px) {
+            row-gap: 140px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (min-width: 1110px) {
+            row-gap: 166px;
+
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .cardContainer {
+            border-radius: 20px;
+            background-color: var(--color-13-v3);
+            border: 2px solid var(--color-11-v3);
+            position: relative;
+
+            .cardImg {
+                position: absolute;
+                top: -78px;
+                left: 50%;
+                transform: translate(-50%, 0);
+
+                img {
+                    width: 250px;
+                }
+            }
+
+            .cardContent {
+                padding: 0 20px;
+                padding-bottom: 30px;
+                padding-top: 135px;
+
+                @media screen and (min-width: 768px) {
+                    padding-top: 157px;
+                }
+
+                .cardTitle {
+                    font-size: 18px;
+                    font-weight: 700;
+                    margin-bottom: 22px;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 19px;
+                    }
+                }
+
+                .cardInfo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    margin-bottom: 20px;
+
+                    .infoRow {
+                        display: flex;
+                        align-items: center;
+                        color: var(--color-10-v3);
+                        font-size: 12px;
+                        line-height: 24px;
+                        justify-content: space-between;
+                        gap: 12px;
+
+                        @media screen and (min-width: 1110px) {
+                            font-size: 14px;
+                        }
+
+                        .leftInside {
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                        }
+
+                        .rightInside {
+                            text-align: end;
+                        }
+                    }
+                }
+
+                .cardActions {
+                    .cardReadMore {
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        margin-bottom: 20px;
+                    }
+
+                    .btns {
+                        display: grid;
+                        gap: 24px;
+
+                        &.grid-1 {
+                            grid-template-columns: 1fr;
+                        }
+
+                        &.grid-2 {
+                            grid-template-columns: 1fr;
+
+                            @media screen and (min-width: 600px) {
+                                grid-template-columns: 1fr 1fr;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

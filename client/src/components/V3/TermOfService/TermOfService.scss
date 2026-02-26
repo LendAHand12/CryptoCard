@@ -1,0 +1,79 @@
+.TermOfServiceV3 {
+  gap: 40px;
+  display: grid;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: var(--color-4-v3);
+  grid-template-columns: 1fr;
+
+  .sectionContent {
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+
+      .titleHeading {
+        font-size: 20px;
+        font-weight: 700;
+
+        @media screen and (min-width: 768px) {
+          font-size: 24px;
+        }
+
+        .line {
+          margin-right: 16px;
+        }
+      }
+    }
+
+    .content {
+      &:not(:last-of-type) {
+        margin-bottom: 80px;
+      }
+
+      .flag {
+        margin-right: 3px;
+      }
+
+      .titleContent {
+        display: flex;
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        line-height: 23.4px;
+        align-items: center;
+        letter-spacing: 0.9px;
+      }
+
+      .textContent {
+        font-size: 16px;
+        color: #bccbd6;
+        font-weight: 300;
+
+        ul,
+        ol {
+          margin-left: 20px;
+          padding-top: 10px;
+          padding-left: 20px;
+        }
+
+        &.hasImg {
+          display: grid;
+          gap: 30px;
+          grid-template-columns: 1fr;
+
+          @media screen and (min-width: 768px) {
+            grid-template-columns: 7fr 3fr;
+            gap: 60px;
+          }
+        }
+      }
+    }
+  }
+}

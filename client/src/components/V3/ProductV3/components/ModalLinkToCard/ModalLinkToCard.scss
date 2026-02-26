@@ -1,0 +1,83 @@
+.ModalLinkToCard {
+    .title {
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .formItem {
+            .label {
+                margin-bottom: 8px;
+                font-weight: 600;
+                font-size: 16px;
+            }
+
+            .inputContainer {
+                position: relative;
+
+                .inputInside {
+                    width: 100%;
+                    padding: 13.5px 20px;
+                    padding-right: 40px;
+                    font-size: 16px;
+                    outline: none;
+                    border: 1px solid rgba(255, 255, 255, 0.7);
+                    background-color: transparent;
+                    border-radius: 8px;
+
+                    &.specificInput {
+                        padding-left: 45px;
+                    }
+                }
+
+                .cardIcon {
+                    position: absolute;
+                    top: 50%;
+                    left: 20px;
+                    transform: translate(0, -50%);
+                }
+
+                .eyeBtn {
+                    position: absolute;
+                    top: 50%;
+                    right: 13.5px;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        .btnInside {
+            background-image: linear-gradient(to bottom, var(--color-2-v3), var(--color-3-v3));
+            color: #000;
+            border-radius: 8px;
+            padding: 18px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            cursor: pointer;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+
+        .noAccount {
+            text-align: center;
+            color: var(--color-15-v3);
+            font-size: 18px;
+
+            .sign {
+                font-weight: 700;
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+    }
+}

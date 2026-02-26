@@ -1,0 +1,14 @@
+{
+    "LOG_IN": {
+        "REQUIRED_LIST": ["phone_number", "password"]
+    },
+    "SIG_UP": {
+        "REQUIRED_LIST": ["user_name", "password", "email"]
+    },
+    "QR_CHK_UP": {
+        "REQUIRED_LIST": ["user_name", "password", "qr_chk_up"]
+    },
+    "EML_CHK": {
+        "REQUIRED_LIST": ["email", "active_code"]
+    }
+}

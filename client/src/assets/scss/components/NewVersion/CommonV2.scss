@@ -1,0 +1,193 @@
+.containerV2 {
+  max-width: $max-w-container-v2;
+  margin: 0 auto;
+  padding: 16px;
+
+  &.size-xl {
+    max-width: $max-w-container-xl-v2;
+  }
+
+  &.size-small {
+    max-width: 900px;
+  }
+
+  &.SwapToken {
+    padding: 50px 0px !important;
+
+    @media screen and (max-width: 768px) {
+      padding: 10px !important;
+    }
+  }
+}
+
+.titleV2 {
+  font-weight: 500;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.tableContainerV2 {
+  margin-bottom: 50px;
+  border-radius: 12px;
+  overflow: hidden;
+  overflow-x: auto;
+  border: 1px solid #ffffff50; /* Add a border to the container for better visibility */
+
+  &.needCenterContent {
+    table {
+      td {
+        text-align: center;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are collapsed */
+    border-radius: 12px;
+    overflow: hidden; /* Ensure the table's borders don't overflow the container */
+    overflow-x: auto;
+    font-size: 14px;
+    display: table;
+
+    @media screen and (max-width: 1280px) {
+    }
+
+    tr {
+      td {
+        &:first-of-type {
+          border-left: 0;
+        }
+
+        &:last-of-type {
+          border-right: 0;
+        }
+      }
+
+      &:first-of-type,
+      &:last-of-type {
+        th {
+          border-top: 0;
+
+          &:first-of-type {
+            border-left: 0;
+          }
+
+          &:last-of-type {
+            border-right: 0;
+          }
+        }
+
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    th,
+    td {
+      border: 1px solid #ffffff50;
+      padding: 4px 8px;
+
+      @media screen and (min-width: 768px) {
+        padding: 8px 16px;
+      }
+    }
+
+    th {
+      background-color: #f4e096;
+      color: black;
+    }
+
+    td {
+      color: #fff;
+    }
+  }
+}
+
+.customDrawerV2.ant-drawer {
+  .ant-drawer-header {
+    background-color: $bg-color-1-v2;
+    color: #fff;
+
+    .ant-drawer-close {
+      color: #fff !important;
+    }
+  }
+
+  .ant-drawer-body {
+    background-color: $bg-color-1-v2;
+    color: #fff;
+  }
+}
+
+.labelInsideV2 {
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.contentInsideV2 {
+  font-size: 14px;
+  color: #fff;
+}
+
+.ant-descriptions.customAntdDesc {
+  .ant-descriptions-view {
+    border-color: #7a7a7a;
+    th,
+    td,
+    tr {
+      border-color: #7a7a7a;
+    }
+  }
+
+  .ant-descriptions-item-label {
+    background-color: #f4e096;
+    width: 150px;
+
+    @media screen and (min-width: 768px) {
+      width: 250px;
+    }
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(10vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.fade-in-right-to-left-section {
+  opacity: 0;
+  transform: translateX(-20%);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-right-to-left-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+@keyframes fadeInHeaderV3 {
+  from {
+    transform: translateX(-20%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

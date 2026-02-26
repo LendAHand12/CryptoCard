@@ -1,0 +1,17 @@
+.HistoryDeposit {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 16px;
+    // height: 1000px;
+
+    @media screen and (min-width: 1024px) {
+        max-width: 600px;
+        padding: 24px;
+    }
+
+    .titleInside {
+        font-size: 18px;
+        font-weight: 500;
+        color: #f4e096;
+    }
+}

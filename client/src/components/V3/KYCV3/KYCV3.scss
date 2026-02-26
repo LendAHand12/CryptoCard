@@ -1,0 +1,142 @@
+.KYCV3 {
+    color: var(--color-4-v3);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+
+    @media screen and (min-width: 1024px) {
+        grid-template-columns: 400px 1fr;
+        gap: 84px;
+    }
+
+    .sectionSelect {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        cursor: pointer;
+
+        @media screen and (min-width: 1024px) {
+            gap: 28px;
+        }
+
+        .selectItem {
+            display: flex;
+            align-items: center;
+
+            .iconRight {
+                color: var(--color-2-v3);
+                transform: translateY(1px);
+                max-width: 0;
+                overflow: hidden;
+
+                &.selected {
+                    margin-right: 8px;
+                    max-width: fit-content;
+                }
+            }
+        }
+    }
+
+    .sectionContent {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 10px;
+
+            .titleHeading {
+                font-size: 20px;
+                font-weight: 700;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 24px;
+                }
+
+                .line {
+                    margin-right: 16px;
+                }
+            }
+        }
+
+        .content {
+            &:not(:last-of-type) {
+                margin-bottom: 80px;
+            }
+
+            .flag {
+                margin-right: 3px;
+            }
+
+            .titleContent {
+                display: flex;
+                align-items: center;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 23.4px;
+                letter-spacing: 0.9px;
+                margin-bottom: 20px;
+            }
+
+            .textContent {
+                font-size: 16px;
+                color: #bccbd6;
+                font-weight: 300;
+
+                ul,
+                ol {
+                    padding-left: 20px;
+                    padding-top: 10px;
+                }
+
+                &.hasImg {
+                    display: grid;
+                    gap: 30px;
+                    grid-template-columns: 1fr;
+
+                    @media screen and (min-width: 768px) {
+                        grid-template-columns: 7fr 3fr;
+                        gap: 60px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.collapsed {
+    .faqItem {
+        border-bottom: 1px solid rgba(173, 178, 177, 0.4);
+
+        .label {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 400;
+            user-select: none;
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            font-size: 16px;
+            font-weight: 300;
+
+            &.opened {
+                max-height: 1000px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}

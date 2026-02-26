@@ -1,0 +1,74 @@
+.Section4V3 {
+    color: var(--color-4-v3);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-top: 60px;
+
+    @media screen and (min-width: 1024px) {
+        margin-top: 0px;
+        grid-template-columns: 1fr 1fr;
+        height: 750px;
+        gap: 100px;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: center;
+
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+
+            @media screen and (min-width: 768px) {
+                font-size: 40px;
+            }
+        }
+
+        .desc {
+            font-size: 16px;
+            color: var(--color-10-v3);
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .cardContainer {
+            position: relative;
+            z-index: 2;
+
+            .card {
+                max-width: 523px;
+                width: 100%;
+                position: relative;
+                z-index: 2;
+            }
+
+            .star {
+                position: absolute;
+                z-index: 1;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        .circle {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            right: 0;
+            transform: translate(50%, -53%);
+            width: 90%;
+
+            @media screen and (min-width: 768px) {
+                width: fit-content;
+            }
+        }
+    }
+}
