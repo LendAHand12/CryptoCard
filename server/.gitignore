@@ -6,3 +6,5 @@ public/videos
 *.mp4
 *.mkv
 .env
+src/sockets/services/blockchainfarm-f588a-firebase-adminsdk-7gy2v-96f54c4652.json
+src/sockets/services/blockchainfarm.json
