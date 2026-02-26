@@ -8,3 +8,4 @@ public/videos
 .env
 src/sockets/services/blockchainfarm-f588a-firebase-adminsdk-7gy2v-96f54c4652.json
 src/sockets/services/blockchainfarm.json
+src/realtimes/configs/blockchainfarm-f588a-firebase-adminsdk-7gy2v-96f54c4652.json
