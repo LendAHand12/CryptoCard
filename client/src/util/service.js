@@ -4,7 +4,7 @@ import { localStorageVariable } from "src/constant";
 
 // TODO: Change domain when deploy
 // export const DOMAIN = "https://cryptocard.hewe.io/";
-export const DOMAIN = "http://localhost:4000/";
+export const DOMAIN = process.env.REACT_APP_DOMAIN;
 // export const DOMAIN = "https://remitano.dk-tech.vn/";
 
 export const IS_DOMAIN_PRODUCTION = DOMAIN == "https://cryptocard.hewe.io/";
