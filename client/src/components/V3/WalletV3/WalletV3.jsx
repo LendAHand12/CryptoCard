@@ -303,7 +303,7 @@ export const WalletV3 = () => {
                       {buttonDepositHEWE}
                       {buttonBuyHewe}
 
-                      {buttonDepositUSDT}
+                      {/* {buttonDepositUSDT} */}
                     </div>
                   );
                 },

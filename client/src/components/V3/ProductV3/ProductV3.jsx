@@ -144,16 +144,16 @@ export const ProductV3 = () => {
               {t("productV3.t2")}
             </div>
 
-            <div className={`btns ${countBtn >= 2 ? "grid-2" : "grid-1"} `}>
+            {/* <div className={`btns ${countBtn >= 2 ? "grid-2" : "grid-1"} `}> */}
               {/* virtual card */}
-              {btnApplyVirtual}
+              {/* {btnApplyVirtual} */}
 
               {/* btn register for card physic */}
-              {btnRegisterPhysic}
+              {/* {btnRegisterPhysic} */}
 
               {/* physic card */}
-              {btnApplyPhysic}
-            </div>
+              {/* {btnApplyPhysic} */}
+            {/* </div> */}
           </div>
         </div>
       </div>
