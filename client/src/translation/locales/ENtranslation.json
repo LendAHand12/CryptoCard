@@ -910,7 +910,9 @@
     "t8": "Operation",
     "t9": "Operation Status",
     "t10": "Time",
-    "t11": "Loading"
+    "t11": "Loading",
+    "t19": "Amount",
+    "t20": "Processing"
   },
   "historyPayment": {
     "t1": "Card History Payments",
@@ -1114,7 +1116,10 @@
     "t15": "Buy AMC",
     "t16": "Buy HEWE",
     "t17": "Deposit",
-    "t18": "Connect Your Wallet"
+    "t18": "Connect Your Wallet",
+    "t19": "Amount",
+    "t20": "Processing...",
+    "t21": "The transaction will be automatically confirmed after on-chain confirmation. The balance will be updated soon after."
   },
   "cardDetailV3": {
     "t1": "Card Pin",

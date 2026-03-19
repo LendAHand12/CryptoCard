@@ -1,4 +1,3 @@
-import QRCode from "react-qr-code";
 import {
   ButtonV3Primary,
   buttonV3PrimarySizes,
@@ -14,7 +13,7 @@ import { Table } from "./components/Table";
 import { ButtonV3 } from "../ButtonV3/ButtonV3";
 import { DOMAIN } from "src/util/service";
 import { useTranslation } from "react-i18next";
-import { message, Spin } from "antd";
+import { message, Spin, Input } from "antd";
 import { preprocessingAddress } from "src/components/NewVersion";
 import i45 from "src/assets/v3/i45.png";
 
@@ -27,12 +26,16 @@ export const WalletV3 = () => {
     topRef,
     handleClickBtnSwap,
     currentNetwork,
-    addressWalletDeposit,
-    isPendingCreateWallet,
     isConnectedWallet,
     address,
     open,
     addressFromProfile,
+    // new deposit
+    adminWalletAddress,
+    depositAmount,
+    setDepositAmount,
+    isDepositing,
+    handleDeposit,
   } = useWalletV3();
   const { t } = useTranslation();
 
@@ -93,6 +96,7 @@ export const WalletV3 = () => {
             </div>
           </div>
 
+          {/* ── Deposit Section (new: direct transfer to admin wallet) ── */}
           <div className="sectionDeposit">
             <div className="depositInfo">
               <div className="infoItem">
@@ -107,52 +111,87 @@ export const WalletV3 = () => {
             </div>
 
             <div className="depositContent">
-              {isPendingCreateWallet ? (
+              <div className="left">
+                {/* Admin wallet address (destination) */}
+                <div className="title" style={{ marginBottom: 8 }}>
+                  {t("walletV3.t6")}
+                </div>
                 <div
+                  className="linkQr"
                   style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    wordBreak: "break-all",
+                    fontSize: 13,
+                    marginBottom: 8,
                   }}
                 >
-                  <Spin />
+                  {adminWalletAddress || "..."}
                 </div>
-              ) : (
-                <div className="left">
-                  <div className="qr">
-                    <div
-                      style={{
-                        background: "#fff",
-                        padding: "8px",
-                        width: "fit-content",
-                        height: "fit-content",
-                        paddingBottom: "0px",
-                      }}
-                    >
-                      <QRCode value={addressWalletDeposit || ""} size={145} />
-                    </div>
-                  </div>
-                  <div className="title">{t("walletV3.t6")}</div>
-                  <div className="linkQr">{addressWalletDeposit}</div>
-                  <div
-                    className="copy text-gradient-t-b"
-                    onClick={() => {
-                      navigator.clipboard.writeText(addressWalletDeposit || "");
-                      message.success(t("copySuccess"));
+                <div
+                  className="copy text-gradient-t-b"
+                  style={{ marginBottom: 16, cursor: "pointer" }}
+                  onClick={() => {
+                    navigator.clipboard.writeText(adminWalletAddress || "");
+                    message.success(t("copySuccess"));
+                  }}
+                >
+                  <span>{t("walletV3.t7")} </span>
+                  <span>
+                    <i className="fa-regular fa-copy"></i>
+                  </span>
+                </div>
+
+                {/* Amount input */}
+                <div style={{ marginBottom: 12 }}>
+                  <Input
+                    type="number"
+                    min={0}
+                    placeholder={`${t("walletV3.t19")} ${currentCoinDeposit || "USDT"}`}
+                    value={depositAmount}
+                    onChange={(e) => setDepositAmount(e.target.value)}
+                    style={{
+                      borderRadius: 8,
+                      height: 44,
+                      fontSize: 16,
                     }}
-                  >
-                    <span>{t("walletV3.t7")} </span>
-                    <span>
-                      <i class="fa-regular fa-copy"></i>
-                    </span>
-                  </div>
+                    suffix={
+                      <span style={{ fontWeight: 700, opacity: 0.7 }}>
+                        {currentCoinDeposit || "USDT"}
+                      </span>
+                    }
+                    disabled={isDepositing}
+                  />
                 </div>
-              )}
+ 
+                {/* Deposit button */}
+                {isConnectedWallet ? (
+                  <ButtonV3Primary
+                    size={buttonV3PrimarySizes.lg}
+                    onClick={handleDeposit}
+                    disabled={isDepositing || !depositAmount}
+                  >
+                    {isDepositing ? (
+                      <span>
+                        <Spin size="small" style={{ marginRight: 8 }} />
+                        {t("walletV3.t20")}
+                      </span>
+                    ) : (
+                      `${t("walletV3.t17")} ${currentCoinDeposit || "USDT"}`
+                    )}
+                  </ButtonV3Primary>
+                ) : (
+                  <ButtonV3Primary
+                    size={buttonV3PrimarySizes.lg}
+                    onClick={() => open()}
+                  >
+                    {t("walletV3.t18")}
+                  </ButtonV3Primary>
+                )}
+              </div>
 
               <div className="right">
                 <div className="note">
                   <div className="icon">
-                    <i class="fa-solid fa-circle-info"></i>
+                    <i className="fa-solid fa-circle-info"></i>
                   </div>
                   <div className="desc">
                     <span>{t("walletV3.t8")} </span>
@@ -164,12 +203,22 @@ export const WalletV3 = () => {
                 </div>
                 <div className="note">
                   <div className="icon">
-                    <i class="fa-solid fa-circle-info"></i>
+                    <i className="fa-solid fa-circle-info"></i>
                   </div>
                   <div className="desc">
                     <span>{t("walletV3.t11")} </span>
                     <span>{currentCoinDeposit}.</span>
                     <span> {t("walletV3.t12")}</span>
+                  </div>
+                </div>
+                <div className="note">
+                  <div className="icon">
+                    <i className="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div className="desc">
+                    <span>
+                      {t("walletV3.t21")}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -252,24 +301,19 @@ export const WalletV3 = () => {
                 title: "",
                 render: (_, record) => {
                   const buttonBuyAmc = record.name === "AMC" && (
-                    <ButtonV3Primary
-                      // onClick={handleClickBtnSwap(record.name.toLowerCase())}
-                    >
-                      {/* {t("walletV3.t15")} */}
+                    <ButtonV3Primary>
                       {t("maintained")}
                     </ButtonV3Primary>
                   );
 
                   const buttonBuyHewe = record.name === "HEWE" && (
-                    <ButtonV3Primary
-                      // onClick={handleClickBtnSwap(record.name.toLowerCase())}
-                    >
-                      {/* {t("walletV3.t16")} */}
+                    <ButtonV3Primary>
                       {t("maintained")}
                     </ButtonV3Primary>
                   );
 
-                  const buttonDepositHEWE = record.name === "HEWE" &&
+                  const buttonDepositHEWE =
+                    record.name === "HEWE" &&
                     isConnectedWallet && (
                       <ButtonV3Primary
                         onClick={handleClickBtnDeposit(record.name, "AMC20")}
@@ -278,7 +322,8 @@ export const WalletV3 = () => {
                       </ButtonV3Primary>
                     );
 
-                  const buttonDepositAMC = record.name === "AMC" &&
+                  const buttonDepositAMC =
+                    record.name === "AMC" &&
                     isConnectedWallet && (
                       <ButtonV3Primary
                         onClick={handleClickBtnDeposit(record.name, "AMC20")}
@@ -297,13 +342,13 @@ export const WalletV3 = () => {
 
                   return (
                     <div style={{ display: "flex", gap: "16px" }}>
-                      {buttonDepositAMC}
+                      {/* {buttonDepositAMC} */}
                       {buttonBuyAmc}
 
-                      {buttonDepositHEWE}
+                      {/* {buttonDepositHEWE} */}
                       {buttonBuyHewe}
 
-                      {/* {buttonDepositUSDT} */}
+                      {buttonDepositUSDT}
                     </div>
                   );
                 },

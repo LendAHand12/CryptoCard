@@ -1114,7 +1114,10 @@
     "t15": "Mua AMC",
     "t16": "Mua HEWE",
     "t17": "Nạp tiền",
-    "t18": "Kết nối ví"
+    "t18": "Kết nối ví",
+    "t19": "Số lượng",
+    "t20": "Đang xử lý...",
+    "t21": "Giao dịch sẽ được xác nhận tự động sau khi on-chain confirm. Số dư sẽ được cập nhật ngay sau đó."
   },
   "cardDetailV3": {
     "t1": "Mã PIN thẻ",

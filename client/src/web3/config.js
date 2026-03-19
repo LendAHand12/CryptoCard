@@ -39,7 +39,8 @@ export const heweChain = defineChain({
 export const config = createConfig({
   chains: [chain],
   transports: {
-    [chain.id]: http(chain.rpcUrls.default.http[0]),
+    // Dùng public BSC RPC miễn phí, tránh Ankr cần API key
+    [chain.id]: http("https://bsc-dataseed1.binance.org"),
     // [heweChain.id]: http(heweChain.rpcUrls.default.http[0]),
   },
   walletConnectProjectId: "9e580cc438a1b04ff55f174f88b7ac51",
