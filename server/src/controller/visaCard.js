@@ -1523,6 +1523,7 @@ module.exports = {
                 await updateRowToTable(`tb_wallet_code`, `amount=amount-${amountCoinUser}`, `code='${symbol}' AND userid=${userid}`)
                 console.log(dataResCreate, "dataResCreate");
                 await commissionFeeDepositCardToSymbol(userid, amountCoinUser, `${mc_trade_no}`, symbol)
+                await delRedis(keyName)
                 success(res, `Successfully loaded ${usd} ${card_coin} onto the card`)
             } else {
                 await delRedis(keyName)
@@ -1532,6 +1533,12 @@ module.exports = {
             // success(res, 'get list successfully', data)
         } catch (error) {
             console.log(error);
+            try {
+                const keyName = `${req.user}depositcard`
+                await delRedis(keyName)
+            } catch (err) {
+                console.log("Failed to clear redis lock in catch block:", err);
+            }
             error_500(res, error)
         }
     },
