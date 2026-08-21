@@ -89,12 +89,12 @@ export const CardDeposit = () => {
   };
 
   // const amountReceived =
-  //   queryValues.cardCurr.toUpperCase() === "USD"
+  //   queryValues.cardCurr?.toUpperCase() === "USD"
   //     ? formData.amountUsdt
   //     : formData.amountEur;
 
   const amountReceived =
-    queryValues.cardCurr.toUpperCase() === "USD"
+    queryValues.cardCurr?.toUpperCase() === "USD"
       ? formData.amountUsdt
       : calculateReceivedByUsdt(formData.amountUsdt);
 

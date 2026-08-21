@@ -260,7 +260,7 @@ module.exports = {
         try {
             const userid = req.user
             const user = await getRowToTable(`tb_admin`, `userid=${userid}`)
-            if (user.length <= 0) return error_400(res, "The user is already an admin")
+            if (user.length <= 0) return error_400(res, "The user is not an admin")
             success(res, "get success", user[0])
         } catch (error) {
             console.log(error);
