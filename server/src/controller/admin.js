@@ -57,6 +57,21 @@ module.exports = {
             error_500(res, error)
         }
     },
+    lockUser: async function (req, res, next) {
+        try {
+            const userid = Number(req.body.userid)
+            const isLocked = Number(req.body.isLocked) == 1 ? 1 : 0
+            if (!userid) return error_400(res, "userid is invalid")
+            if (userid == 1) return error_400(res, "This user cannot be locked")
+            const user = await getRowToTable(`users`, `id=${userid}`)
+            if (user.length <= 0) return error_400(res, "user is not define")
+            await updateRowToTable(`users`, `is_locked=${isLocked}`, `id=${userid}`)
+            success(res, isLocked ? "Lock user success" : "Unlock user success")
+        } catch (error) {
+            console.log(error);
+            error_500(res, error)
+        }
+    },
     getHistoryDepositAdmin: async function (req, res, next) {
         try {
             const { limit, page, query } = req.body

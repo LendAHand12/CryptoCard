@@ -5,7 +5,7 @@ import TransferHistory from "./transfer-history";
 import WithdrawHistory from "./withdraw-history";
 import { useEffect, useState } from "react";
 import ListWallet from "./list-wallet";
-import { getUserToId } from "src/util/adminCallApi";
+import { getUserToId, lockUser } from "src/util/adminCallApi";
 import { DrillContext } from "src/context/drill";
 import { useHistory, useLocation } from "react-router-dom";
 import { adminPermision, url, urlParams } from "src/constant";
@@ -15,14 +15,14 @@ import { analysisAdminPermision } from "src/util/common";
 import { useSelector } from "react-redux";
 import NoPermision from "../no-permision";
 import socket from "src/util/socket";
-import { callToastError } from "src/function/toast/callToast";
+import { callToastError, callToastSuccess } from "src/function/toast/callToast";
 import { ListCardCreation } from "src/components/NewVersion/Admin/CardPage/components/ListCardCreation/ListCardCreation";
 import { ListAllCard } from "src/components/NewVersion/Admin/CardPage/components/ListAllCard/ListAllCard";
 import { ListCardOperation } from "src/components/NewVersion/Admin/CardPage/components/ListCardOperation/ListCardOperation";
 import { AdminCommission } from "../adminCommission/AdminCommission";
 import { TreeData } from "src/components/profile/TreeData/TreeData";
 import { UserInfo } from "./UserInfo/UserInfo";
-import { Tabs } from "antd";
+import { Button, Popconfirm, Tabs } from "antd";
 import { ListCardOfUserAdmin } from "./ListCardOfUser/ListCardOfUserAdmin";
 import queryString from "query-string";
 import { ListChangeWallet } from "./ListChangeWallet/ListChangeWallet";
@@ -93,6 +93,25 @@ function UserDetail() {
     } catch (error) {
       const mess = error?.response?.data?.message;
       callToastError(mess);
+    }
+  };
+
+  // khóa / mở khóa user
+  const [isLockLoading, setIsLockLoading] = useState(false);
+  const isUserLocked = userInfo?.is_locked == 1;
+  const handleToggleLock = async () => {
+    try {
+      setIsLockLoading(true);
+      await lockUser({
+        userid: userInfo?.id,
+        isLocked: isUserLocked ? 0 : 1,
+      });
+      setUserInfo((prev) => ({ ...prev, is_locked: isUserLocked ? 0 : 1 }));
+      callToastSuccess(isUserLocked ? "Unlock user success" : "Lock user success");
+    } catch (error) {
+      callToastError(error?.response?.data?.message);
+    } finally {
+      setIsLockLoading(false);
     }
   };
 
@@ -167,6 +186,47 @@ function UserDetail() {
           <div className={css.userDetail__image__right__email}>
             {renderEmail(userInfo?.email)}
           </div>
+          {userInfo?.id && (
+            <div className={css.userDetail__image__right__lock}>
+              <span
+                className={`${css.lockBadge} ${
+                  isUserLocked ? css.locked : css.active
+                }`}
+              >
+                <span className={css.lockBadge__dot}></span>
+                {isUserLocked ? "Locked" : "Active"}
+              </span>
+              {currentPagePermision === adminPermision.edit && (
+                <Popconfirm
+                  title={
+                    isUserLocked
+                      ? "Unlock this user? They will be able to log in again."
+                      : "Lock this user? They will be logged out and cannot log in."
+                  }
+                  onConfirm={handleToggleLock}
+                  okText={isUserLocked ? "Unlock" : "Lock"}
+                  okButtonProps={{ danger: !isUserLocked }}
+                  cancelText="Cancel"
+                >
+                  <Button
+                    className={`${css.lockButton} ${
+                      isUserLocked ? css.unlock : css.lock
+                    }`}
+                    loading={isLockLoading}
+                    icon={
+                      <i
+                        className={`fa-solid ${
+                          isUserLocked ? "fa-lock-open" : "fa-lock"
+                        }`}
+                      ></i>
+                    }
+                  >
+                    {isUserLocked ? "Unlock user" : "Lock user"}
+                  </Button>
+                </Popconfirm>
+              )}
+            </div>
+          )}
         </div>
       </div>
       <div className={css.userDetail__table}>

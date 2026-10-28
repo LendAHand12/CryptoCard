@@ -113,6 +113,9 @@ router.post('/login12Characters', async function (req, res, next) {
         } = req.body
         const charactersUser = await isCheckCharacters(characters)
         if (charactersUser) {
+            if (charactersUser.is_locked == 1) {
+                return error_400(res, "Your account has been locked!", 12)
+            }
             if (charactersUser.characters == 1) {
                 charactersUser.token = getToken(charactersUser)
                 success(res, `Logged in successfully`, charactersUser)

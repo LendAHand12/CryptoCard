@@ -119,6 +119,11 @@ export const updateAmountWalletToId = function (data) {
     return axiosService.post("/api/adminv2/updateAmountWalletToId", data);
   } catch (error) { }
 };
+export const lockUser = function (data) {
+  try {
+    return axiosService.post("/api/adminv2/lockUser", data);
+  } catch (error) { }
+};
 export const historySwapAdmin = function (data) {
   try {
     return axiosService.post("/api/swap/historySwapAdmin", data);

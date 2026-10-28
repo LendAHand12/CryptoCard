@@ -3387,6 +3387,9 @@ router.post('/login', validateLogin(), async function (req, res, next) {
         const user = await customerQuery.loginUser(userName, passwordMd5)
 
         if (user.length > 0) {
+            if (user[0].is_locked == 1) {
+                return error_400(res, "Your account has been locked!", 12)
+            }
             if (user[0].status == 1) {
 
 

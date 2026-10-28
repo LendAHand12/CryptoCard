@@ -9,7 +9,7 @@ const passport = require('passport');
 const passportConfig = require('../middlewares/passport');
 const customerQuery = require('../sockets/queries/customerQuery');
 const { authenticateAdmin, authenticateAdminUser, authenticateAdminTransfer, authenticateAdminDeposit, authenticateAdminWidthdraw, authenticateAdminEditAdmin, authenticateAdminEditUser, authenticateAdminBuyToken } = require('../middlewares/authenticate');
-const { getWalletToUserAdmin, historytransferAdmin, updateAmountWalletToId, getHistoryDepositAdmin, getHistoryDepositAdminAll, historytransferAdminAll, getUserAll, sreachWalletWithdraw, sreachWalletToWithdraw, getWalletToWithdrawWhere, getAllUserWallet, getUserToId, addAdmin, editAdmin, getAdmim, deleteAdmin, checkAdmin, sreachDepositToAdmin, sreachUserToAddressWallet, getHistoryBuyCoin, getHistoryUpdateWallet, editFuncAdmin } = require('../controller/admin');
+const { lockUser, getWalletToUserAdmin, historytransferAdmin, updateAmountWalletToId, getHistoryDepositAdmin, getHistoryDepositAdminAll, historytransferAdminAll, getUserAll, sreachWalletWithdraw, sreachWalletToWithdraw, getWalletToWithdrawWhere, getAllUserWallet, getUserToId, addAdmin, editAdmin, getAdmim, deleteAdmin, checkAdmin, sreachDepositToAdmin, sreachUserToAddressWallet, getHistoryBuyCoin, getHistoryUpdateWallet, editFuncAdmin } = require('../controller/admin');
 const { getHistoryDepositToCardToKeyword, getHistoryDepositToCardToTime, getHistoryDepositToCardToTimeAll } = require('../controller/visaCard');
 router.post('/getWalletToUserAdmin', passport.authenticate('jwt', {
 
@@ -61,6 +61,10 @@ router.post('/updateAmountWalletToId', passport.authenticate('jwt', {
 
     session: false
 }), authenticateAdminEditUser,updateAmountWalletToId);
+router.post('/lockUser', passport.authenticate('jwt', {
+
+    session: false
+}), authenticateAdminEditUser, lockUser);
 router.post('/getHistoryUpdateWallet', passport.authenticate('jwt', {
 
     session: false
